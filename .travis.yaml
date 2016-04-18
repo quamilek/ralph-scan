@@ -3,3 +3,5 @@ go:
   - 1.5
   - 1.6
 sudo: false
+script:
+  cd cmd & go test -v
