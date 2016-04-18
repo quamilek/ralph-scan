@@ -1,4 +1,5 @@
 # ralph-scan
+[![Build Status](https://travis-ci.org/quamilek/ralph-scan.svg?branch=master)](https://travis-ci.org/quamilek/ralph-scan)
 
 
 ```

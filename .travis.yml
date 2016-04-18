@@ -1,7 +1,15 @@
-nguage: go
+language: go
 go:
   - 1.5
   - 1.6
-sudo: false
+before_install:
+  - go get github.com/modocache/gover
+  - go get github.com/mattn/goveralls
+  - go get golang.org/x/tools/cmd/cover
+  - go get golang.org/x/tools/cmd/goimports
+  - go get github.com/golang/lint/golint
 script:
-  cd cmd & go test -v
+ - golint ./... # This won't break the build, just show warnings
+ - go test -v -coverprofile=main.coverprofile ./cmd
+ - $HOME/gopath/bin/gover
+ - $HOME/gopath/bin/goveralls -coverprofile=gover.coverprofile -service travis-ci
